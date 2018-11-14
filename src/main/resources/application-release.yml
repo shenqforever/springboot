@@ -1,0 +1,7 @@
+# 生产配置
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://xxxxxxx:3306/dc_async_service?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+      username: xxxxx
+      password: xxxxx
