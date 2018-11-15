@@ -6,6 +6,45 @@
     <groupId>com.test</groupId>
     <artifactId>stringboot</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <!-- 模块说明：这里声明多个子模块 -->
+    <modules>
+        <module>commerce-util</module>
+        <module>commerce-service</module>
+        <module>commerce-common</module>
+        <module>commerce-webapi</module>
+        <module>commerce-pojo</module>
+        <module>commerce-mapper</module>
+    </modules>
+    <!-- 版本说明：这里统一管理依赖的版本号 -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.test</groupId>
+                <artifactId>commerce-repo</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.test</groupId>
+                <artifactId>commerce-util</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.test</groupId>
+                <artifactId>commerce-service</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.test</groupId>
+                <artifactId>commerce-common</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.test</groupId>
+                <artifactId>commerce-dao</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <!-- parent指明继承关系，给出被继承的父项目的具体信息-->
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -13,21 +52,6 @@
         <version>2.1.0.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <!-- 模块说明：这里多个子模块 -->
-    <modules>
-        <!--html-->
-        <module>common_web</module>
-        <!--数据层-->
-        <module>common_service</module>
-        <!--实体模型层-->
-        <module>common_entity</module>
-        <!--线程管理 处理高并发-->
-        <module>common_thread</module>
-        <!--所有数据库连接-->
-        <module>common_config</module>
-        <!--数据层-->
-        <module>common_repo</module>
-    </modules>
 
 
     <!--<profiles>-->
@@ -81,6 +105,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
+
+        </dependency>
+        <!-- thymeleaf网页解析 -->
+        <dependency>
+            <groupId>net.sourceforge.nekohtml</groupId>
+            <artifactId>nekohtml</artifactId>
         </dependency>
 
         <dependency>
@@ -127,6 +157,7 @@
             <version>1.16.20</version>
             <scope>provided</scope>
         </dependency>
+
     </dependencies>
 
     <build>
